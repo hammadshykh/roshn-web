@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { usePathname, useSearchParams } from "next/navigation";
+import { usePathname } from "next/navigation";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 
@@ -9,7 +9,6 @@ const LoadingPage = () => {
  const [isLoading, setIsLoading] = useState(false);
  const [isVisible, setIsVisible] = useState(false);
  const pathname = usePathname();
- const searchParams = useSearchParams();
 
  useEffect(() => {
   // Show loading when route changes
@@ -23,7 +22,7 @@ const LoadingPage = () => {
   }, 2000);
 
   return () => clearTimeout(timer);
- }, [pathname, searchParams]);
+ }, [pathname]);
 
  // Also show loading on initial page load
  useEffect(() => {
