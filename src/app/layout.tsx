@@ -6,6 +6,7 @@ import "./globals.css";
 import LoadingPage from "@/components/LoadingPage";
 import Footer from "@/components/layout/Footer";
 import React from "react";
+import Script from "next/script";
 
 // ✅ Import IBM Plex Arabic
 const ibmPlexArabic = IBM_Plex_Sans_Arabic({
@@ -42,14 +43,18 @@ export default function RootLayout({
      crawlSpeed={200}
      showSpinner={false}
     />
-
     {/* ✅ Custom Loading Page */}
     <LoadingPage />
-
     {/* ✅ Main Content */}
     <div className="min-h-screen">{children}</div>
-
     <Footer />
+    {/* UserWay Accessibility Widget */}
+    <Script
+     id="userway-widget"
+     src="https://cdn.userway.org/widget.js"
+     strategy="afterInteractive" // ✅ load karega jab page interactive ho jaye
+     data-account="2hNanEaz1l"
+    />
    </body>
   </html>
  );
