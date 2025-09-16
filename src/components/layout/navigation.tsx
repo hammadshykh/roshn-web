@@ -57,7 +57,7 @@ function DropdownItem({ label, items }: DropdownItemProps) {
    gsap.fromTo(
     dropdownRef.current,
     { autoAlpha: 0 },
-    { autoAlpha: 1, duration: 0.5, ease: "power2.out" }
+    { autoAlpha: 1, duration: 0.8, ease: "power2.out" }
    );
   } else {
    document.body.style.overflow = "unset";
@@ -126,8 +126,9 @@ function DropdownItem({ label, items }: DropdownItemProps) {
      className="absolute inset-0 z-[-20] bg-black/70 backdrop-blur-md o pointer-events-none supports-backdrop-blur:bg-background/90 w-full"
      onClick={handleCloseDropdown}
     />
+    <div className="inset-0 absolute blur-2xl " />
     {/* Content container */}
-    <div className="container mx-auto pt-48 px-4 relative z-[51]">
+    <div className="container max-w-[1440px] mx-auto pt-48 px-4 relative z-[51]">
      <div className="flex items-start gap-8 w-full">
       {/* Left content */}
       <div className="w-md space-y-6 p-5 text-white">

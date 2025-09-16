@@ -7,6 +7,7 @@ import LoadingPage from "@/components/LoadingPage";
 import Footer from "@/components/layout/Footer";
 import React from "react";
 import Script from "next/script";
+import AccessibilityProvider from "@/components/AccessibilityProvider";
 
 // ✅ Import IBM Plex Arabic
 const ibmPlexArabic = IBM_Plex_Sans_Arabic({
@@ -46,6 +47,10 @@ export default function RootLayout({
     {/* ✅ Custom Loading Page */}
     <LoadingPage />
     {/* ✅ Main Content */}
+    <a className="skip-link" href="#main">
+     Skip to content
+    </a>
+    {/* <AccessibilityProvider /> */}
     <div className="min-h-screen">{children}</div>
     <Footer />
     {/* UserWay Accessibility Widget */}
